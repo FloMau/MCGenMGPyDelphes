@@ -1,0 +1,25 @@
+import model sm
+set gauge unitary
+define l+ = e+ mu+ ta+
+define l- = l- mu- ta-
+# lepton+jets
+generate p p > t t~ h, (t > W+ b, W+ > l+ vl), (t~ > W- b~, W- > j j)
+add process p p > t t~ h, (t > W+ b, W+ > j j), (t~ > W- b~, W- > l- vl~)
+# dilepton
+add process p p > t t~ h, (t > W+ b, W+ > l+ vl), (t~ > W- b~, W- > l- vl~)
+
+output ttH_gridpack_dir
+
+launch ttH_gridpack_dir
+
+# Shower and Delphes after the generation with gridpacks
+# Unfortunately, Madspin and gridpack does not work properly, so we use decay chain syntax
+# Runs a little longer but probably easier compared to trying to set up Madspin on top of lhe events...
+analysis=OFF
+done
+
+set use_syst False
+set ebeam 7000
+set gridpack True
+set nevents 50k
+done
