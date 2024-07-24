@@ -24,7 +24,21 @@ make # accelerate with something like make -j 8 if you want
 make install
 ```
 
+In the repo, make sure to build the executable for showering the LHE events and check that there are no errors.
+```
+make
+```
+
+For good measure:
+```
+chmod +x shower_LHE
+```
+
 Make sure that the setup.sh is executable
 ```
 chmod +x setup.sh
+```
+
+```
+ls ../LHE_generation/output/ttH/*.lhe.gz > input_lists/lhe_files_ttH.txt
 ```

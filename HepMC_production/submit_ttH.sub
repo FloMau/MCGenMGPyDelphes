@@ -1,0 +1,21 @@
+Universe   = vanilla
+Executable = run_shower.sh
+Arguments  = shower_LHE $(InputFile)
+transfer_input_files = shower_LHE, $(InputFile), setup.sh
+
+# Transfer the output HepMC file back
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files = output_$(InputFile).hepmc
+
+# Log, output, and error files
+log    = logs/ttH_job_$(Cluster)_$(Process).log
+output = outs/ttH_job_$(Cluster)_$(Process).out
+error  = errs/ttH_job_$(Cluster)_$(Process).err
+
+# Request resources
+request_cpus = 1
+request_memory = 16 GB
+request_disk = 16 GB
+
+queue InputFile from input_lists/lhe_files_ttH.txt
