@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     int iAbort = 0;
 
     // Begin event loop; generate until none left in input file.
-    for (int iEvent = 0; iEvent < 500; ++iEvent) {
+    for (int iEvent = 0; ; ++iEvent) {
         // Print status update every 100 events
         if (iEvent % 100 == 0) {
             std::cout << "INFO: Processed " << iEvent << " ..." << std::endl;
