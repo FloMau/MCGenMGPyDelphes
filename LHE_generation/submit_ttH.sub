@@ -1,0 +1,15 @@
+universe = vanilla
+executable = run_gridpack.sh
+arguments = $(Cluster) $(Process)
+transfer_executable = True
+initialdir = /net/scratch_cms3a/spaeh/public/Projects/MCGenMGPyDelphes/LHE_generation
+log    = logs/ttH_job_$(Process).log
+output = outs/ttH_job_$(Process).out
+error  = errs/ttH_job_$(Process).err
+request_cpus = 8
+request_memory = 4 GB
+request_disk = 2 GB
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = /net/scratch_cms3a/spaeh/public/Projects/MCGenMGPyDelphes/LHE_generation/ttH_gridpack_dir/run_01_gridpack.tar.gz
+queue 2

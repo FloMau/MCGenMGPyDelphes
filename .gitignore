@@ -1,2 +1,7 @@
 py.py
 LHE_generation/ttH_gridpack_dir
+
+# htcondor stuff
+*.log
+*.err
+*.out
