@@ -29,7 +29,10 @@ NEVENTS=50000
 # Run the script
 ./run.sh $NEVENTS $SEED
 
-# Transfer output back to initial directory
-cp events.lhe.gz $INITIALDIR/output/ttH_events_${CLUSTER_ID}_${PROCESS_ID}.lhe.gz
+# Ensure the output directory exists
+mkdir -p $INITIALDIR/output
+
+# Rename and move the output file to the initial directory
+#cp events.lhe.gz $WORKDIR/ttH_events_${CLUSTER_ID}_${PROCESS_ID}.lhe.gz
 
 exit 0
