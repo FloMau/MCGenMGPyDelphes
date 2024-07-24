@@ -1,0 +1,12 @@
+# Python
+py.py
+
+# htcondor stuff
+*.log
+*.err
+*.out
+
+# LHE generation
+LHE_generation/ttH_gridpack_dir
+*.lhe
+*.lhe.gz
