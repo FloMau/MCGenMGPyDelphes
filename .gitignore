@@ -10,3 +10,7 @@ py.py
 LHE_generation/ttH_gridpack_dir
 *.lhe
 *.lhe.gz
+
+# HepMC production
+*.hepmc
+HepMC_production/shower_LHE
