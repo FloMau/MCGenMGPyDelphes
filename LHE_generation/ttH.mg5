@@ -2,6 +2,8 @@ import model sm
 set gauge unitary
 define l+ = e+ mu+ ta+
 define l- = l- mu- ta-
+# 5 FS
+define p = g u c d s b u~ c~ d~ s~ b~
 # lepton+jets
 generate p p > t t~ h, (t > W+ b, W+ > l+ vl), (t~ > W- b~, W- > j j)
 add process p p > t t~ h, (t > W+ b, W+ > j j), (t~ > W- b~, W- > l- vl~)
