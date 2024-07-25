@@ -1,5 +1,5 @@
 universe = vanilla
-executable = run_gridpack.sh
+executable = run_gridpack_ttH.sh
 arguments = $(Cluster) $(Process)
 transfer_executable = True
 log    = logs/ttH_job_$(Process).log
