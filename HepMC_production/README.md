@@ -5,6 +5,7 @@
 We have to install Pythia8 ourselves for support for hepmc3 output. In principle Pythia8 is also available in LCG, but it is not compiled against hepmc3 to my knowledge, otherwise it would be possible...
 
 The Pythia8 submodule was set up using
+#### (no need to run this again)
 ```
 git submodule add https://gitlab.com/Pythia8/releases
 git mv releases/ Pythia8
@@ -26,7 +27,12 @@ make install
 
 In the repo, make sure to build the executable for showering the LHE events and check that there are no errors.
 ```
+cd ..
 make
+```
+
+```
+mkdir logs errs outs
 ```
 
 For good measure:
@@ -39,6 +45,19 @@ Make sure that the setup.sh is executable
 chmod +x setup.sh
 ```
 
+#### to get a list of files to process:
 ```
+mkdir input_lists
 ls ../LHE_generation/output/ttH/*.lhe.gz > input_lists/lhe_files_ttH.txt
+ls ../LHE_generation/output/tHq/*.lhe.gz > input_lists/lhe_files_tHq.txt
+```
+
+```
+condor_submit submit_ttH.sub
+condor_submit submit_tHq.sub
+```
+
+I did not manage to make HTCondor copy the output files automatically to the right location, so run this:
+```
+source moveOutput.sh
 ```
