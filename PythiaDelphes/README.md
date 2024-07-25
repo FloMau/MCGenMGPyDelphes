@@ -39,6 +39,8 @@ For good measure:
 ```
 chmod +x shower_LHE
 ```
+Change the path of the delphes card to your local one in `runPythiaDelphes.sh`!
+Change Pythia path in `setup.sh`!
 
 Make sure that the setup.sh is executable
 ```
@@ -51,6 +53,7 @@ mkdir input_lists
 ls ../LHE_generation/output/ttH/*.lhe.gz > input_lists/lhe_files_ttH.txt
 ls ../LHE_generation/output/tHq/*.lhe.gz > input_lists/lhe_files_tHq.txt
 ```
+
 
 ```
 condor_submit submit_ttH.sub

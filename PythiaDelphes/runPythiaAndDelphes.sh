@@ -50,7 +50,7 @@ ROOT_FILE="$BASE_NAME.root"
 
 # Run DelphesHepMC3 on the output .hepmc file to produce a .root file
 echo "Running DelphesHepMC3 on $HEPMC_FILE to produce $ROOT_FILE..."
-/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/bin/DelphesHepMC3 /net/scratch_cms3a/mausolf/MCGenMGPyDelphes/HepMC_production/my_delphes_card_CMS.tcl "$ROOT_FILE" "$HEPMC_FILE"
+/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/bin/DelphesHepMC3 /net/scratch_cms3a/mausolf/MCGenMGPyDelphes/PythiaDelphes/my_delphes_card_CMS.tcl "$ROOT_FILE" "$HEPMC_FILE"
 if [ $? -ne 0 ]; then
   echo "DelphesHepMC3 failed."
   exit 1

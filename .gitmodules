@@ -1,4 +1,4 @@
 [submodule "HepMC_production/releases"]
-	path = HepMC_production/Pythia8
+	path = PythiaDelphes/Pythia8
 	url = https://gitlab.com/Pythia8/releases
 	ignore = all
