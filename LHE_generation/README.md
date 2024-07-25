@@ -1,18 +1,23 @@
-Prepare the gridpack after setting up MadGraph5
+Setup environment:
+source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+
+Prepare the gridpacks
 ```
 mg5_aMC ttH.mg5
+mg5_aMC tHq.mg5
 ```
 
-Make sure that the gridpack runner script is executable:
+Make sure that the gridpack runner scripts are executable:
 ```
-chmod +x ./run_gridpack.sh
+chmod +x ./run_gridpack_ttH.sh
+chmod +x ./run_gridpack_tHq.sh
 ```
 
 Prepare the output directory for the events
 ```
 mkdir output
 mkdir output/ttH
-mkdir output/tHqb
+mkdir output/tHq
 ```
 
 Also prepare the directories for log, out, and err files. Otherwise, the condor jobs will go on hold.
@@ -22,6 +27,7 @@ mkdir logs errs outs
 
 Then, simply submit the gridpack jobs
 ```
+condor_submit submit_ttH.sub
 condor_submit submit_ttH.sub
 ```
 
