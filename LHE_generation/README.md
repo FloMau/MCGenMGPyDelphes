@@ -28,7 +28,7 @@ mkdir logs errs outs
 Then, simply submit the gridpack jobs
 ```
 condor_submit submit_ttH.sub
-condor_submit submit_ttH.sub
+condor_submit submit_tHq.sub
 ```
 
 Note: To unpack the lhe events and check them, one can use
