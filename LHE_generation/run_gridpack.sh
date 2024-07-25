@@ -24,7 +24,7 @@ cd -
 
 # Set seed and number of events
 SEED=$(date +%N)
-NEVENTS=50000
+NEVENTS=5000
 
 # Run the script
 ./run.sh $NEVENTS $SEED

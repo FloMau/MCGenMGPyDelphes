@@ -50,6 +50,8 @@ int main(int argc, char* argv[]) {
     // Initialize Les Houches Event File run. List initialization information.
     pythia.readString("Beams:frameType = 4");
     pythia.readString("Beams:LHEF = " + inputFilename);
+    pythia.readString("25:onMode = off");
+    pythia.readString("25:onIfMatch = 22 22");
     pythia.init();
 
     // Set up output file
