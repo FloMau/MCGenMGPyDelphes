@@ -21,14 +21,14 @@ cd Pythia8
 git checkout pythia8312
 # Note that you will get some weird yellow messages and Pythia8 complains a bit, but I do not understand why and it is working, so I do not care.
 ./configure --lcg=x86_64-el9-gcc13-opt --lcg-version=LCG_106 ./configure --with-gzip --with-hepmc3 --with-lhapdf6 --with-fastjet3 --with-root --with-python
-make # accelerate with something like make -j 8 if you want
+make -j 8 # accelerate with something like make -j 8 if you want
 make install
 ```
 
 In the repo, make sure to build the executable for showering the LHE events and check that there are no errors.
 ```
 cd ..
-make
+make -j 8
 ```
 
 ```
@@ -49,7 +49,7 @@ chmod +x setup.sh
 
 #### to get a list of files to process:
 ```
-mkdir input_lists
+mkdir input_lists -p
 ls ../LHE_generation/output/ttH/*.lhe.gz > input_lists/lhe_files_ttH.txt
 ls ../LHE_generation/output/tHq/*.lhe.gz > input_lists/lhe_files_tHq.txt
 ```

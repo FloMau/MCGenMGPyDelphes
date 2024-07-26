@@ -20,4 +20,6 @@ request_cpus = 1
 request_memory = 16 GB
 request_disk = 16 GB
 
+max_materialize = 10
+
 queue InputFile from input_lists/lhe_files_ttH.txt
