@@ -1,12 +1,14 @@
 Universe   = vanilla
-Executable = run_shower.sh
+Executable = runPythiaAndDelphes.sh
 Arguments  = shower_LHE $(InputFile)
 transfer_input_files = shower_LHE, $(InputFile), setup.sh
 
-# Transfer the output HepMC file back
+# Transfer the output root file back
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_output_remaps = "$(InputFile:.lhe.gz=.hepmc)=./output/ttH/$(InputFile:.lhe.gz=.hepmc)"
+
+# Output file definition
+output_destination = /net/scratch_cms3a/mausolf/MCGenMGPyDelphes/HepMC_production/output/ttH
 
 # Log, output, and error files
 log    = logs/ttH_job_$(Cluster)_$(Process).log
@@ -17,5 +19,7 @@ error  = errs/ttH_job_$(Cluster)_$(Process).err
 request_cpus = 1
 request_memory = 16 GB
 request_disk = 16 GB
+
+max_materialize = 10
 
 queue InputFile from input_lists/lhe_files_ttH.txt

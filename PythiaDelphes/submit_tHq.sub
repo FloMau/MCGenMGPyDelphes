@@ -1,0 +1,25 @@
+Universe   = vanilla
+Executable = runPythiaAndDelphes.sh
+Arguments  = shower_LHE $(InputFile)
+transfer_input_files = shower_LHE, $(InputFile), setup.sh
+
+# Transfer the output root file back
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+# Output file definition (this apparently also does not do the job, I did not manage to make it move the output files to ./output/tHq/.......)
+output_destination = /net/scratch_cms3a/mausolf/MCGenMGPyDelphes/HepMC_production/output/tHq
+
+# Log, output, and error files
+log    = logs/tHq_job_$(Cluster)_$(Process).log
+output = outs/tHq_job_$(Cluster)_$(Process).out
+error  = errs/tHq_job_$(Cluster)_$(Process).err
+
+# Request resources
+request_cpus = 1
+request_memory = 16 GB
+request_disk = 16 GB
+
+max_materialize = 10
+
+queue InputFile from input_lists/lhe_files_tHq.txt
