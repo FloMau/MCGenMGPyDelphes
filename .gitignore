@@ -8,9 +8,16 @@ py.py
 
 # LHE generation
 LHE_generation/ttH_gridpack_dir
+LHE_generation/tHq_gridpack_dir
+LHE_generation/MG5_debug
 *.lhe
 *.lhe.gz
 
 # HepMC production
 *.hepmc
 HepMC_production/shower_LHE
+HepMC_production/Pythia8
+
+PythiaDelphes/input_lists/
+PythiaDelphes/output/
+PythiaDelphes/shower_LHE
