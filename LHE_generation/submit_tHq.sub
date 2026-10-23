@@ -13,4 +13,4 @@ when_to_transfer_output = ON_EXIT
 transfer_input_files = ./tHq_gridpack_dir/run_01_gridpack.tar.gz
 transfer_output_files = tHq_events_$(Cluster)_$(Process).lhe.gz
 transfer_output_remaps = "tHq_events_$(Cluster)_$(Process).lhe.gz=./output/tHq/tHq_events_$(Cluster)_$(Process).lhe.gz"
-queue 8
+queue 1
